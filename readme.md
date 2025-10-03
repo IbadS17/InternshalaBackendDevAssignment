@@ -86,18 +86,7 @@ Postman Collection: [`postman_collection.json`](./postman/postman_collection.jso
 
 ## Scalability Notes
 
-- Modular structure allows easy addition of new modules
-- JWT + role-based access supports multi-service architecture
-- Database can be clustered for high load
-- Optional: caching, logging, Docker deployment
+Right now app is simple monolithic, but if traffic grow in future then we can split into micro services (auth, tasks, etc). Also can add Redis cache for speed, use load balancer with multiple servers, and DB replication/sharding for handling more users. Later we can dockerize for easy deploy.
 
 ---
 
-## Deployment Links
-
-- Frontend: [https://your-frontend.vercel.app](https://your-frontend.vercel.app)
-- Backend: [https://your-backend.onrender.com](https://your-backend.onrender.com)
-
----
-
-## Demo / Screenshots

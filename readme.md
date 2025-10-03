@@ -1,39 +1,58 @@
-# TaskMaster
+# Frontend Developer Assignment
 
-A lightweight full-stack task manager built for a Frontend Developer Intern assignment. Clean UX, authentication, email verification, and task productivity.
+## Project Overview
 
-## What it does
+This is a full-stack web application built as part of my internship assignments. It includes a **React frontend** with authentication and dashboard, and a **Node.js/Express backend** with JWT-based authentication and CRUD APIs. The app is responsive, secure, and structured for easy scaling.
 
-Register → Get verification email → Verify → Login → Create / Update / Filter tasks → Logout.
+---
 
-## Tech Stack
+## Features
 
-- Frontend: React + Vite, TailwindCSS, React Router, React Hook Form
-- Backend: Node.js, Express, MongoDB (Mongoose)
-- Auth & Security: JWT, bcrypt, protected routes, email verification
-- Email: Nodemailer + HTML templates
+### Frontend
 
-## Core Features
+- Signup / Login / Logout with JWT
+- Protected routes for dashboard access
+- Forms with client & server-side validation
+- CRUD operations on sample entity (tasks/notes/posts)
+- Search and filter UI
+- Responsive design using TailwindCSS
 
-✅ Register / Login / Logout
-✅ Email verification (24h token + resend)
-✅ Dark / Light theme (persists)
-✅ CRUD: title, description, priority, status, due date
-✅ Search + filter tasks
-✅ Form validation (client + server)
-✅ Toast notifications & loading states
+### Backend
 
-## Quick Start
+- User registration & login with hashed passwords (bcrypt)
+- JWT-based authentication & role-based access (user/admin)
+- CRUD APIs for sample entity
+- Input validation and error handling
+- API versioning (`/api/v1/...`)
+- Postman collection included for testing
 
-Backend:
+---
+
+## Project Structure
+
+```
+project-root/
+ ├── backend/       # Node/Express + MongoDB backend
+ ├── frontend/      # React + Tailwind frontend
+ ├── postman/       # Postman collection
+ └── README.md
+```
+
+---
+
+## Setup Instructions
+
+### Backend
 
 ```bash
 cd backend
 npm install
-npm start
+npm run dev
 ```
 
-Frontend:
+Runs at: `http://localhost:5000`
+
+### Frontend
 
 ```bash
 cd frontend
@@ -41,53 +60,44 @@ npm install
 npm run dev
 ```
 
-### Backend .env
-
-```
-PORT=5000
-MONGODB_URI=your_mongodb_connection
-JWT_SECRET=replace_with_strong_secret
-JWT_EXPIRE=7d
-EMAIL_HOST=smtp.gmail.com
-EMAIL_PORT=587
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_app_password
-FRONTEND_URL=http://localhost:3000
-BACKEND_URL=http://localhost:5000
-```
-
-## Structure (Minimal)
-
-```
-backend/
-	src/controllers  src/models  src/routes  src/middleware  src/utils
-frontend/
-	src/components  src/pages  src/context  src/utils
-```
-
-## Checklist
-
-- [x] Responsive UI
-- [x] Auth + JWT + protected routes
-- [x] Email verification
-- [x] CRUD entity (tasks)
-- [x] Search & filter
-- [x] Password hashing (bcrypt)
-- [x] Validation & error handling
-- [x] Clean scalable structure
-
-## Why it’s solid
-
-Fast setup, clear separation of concerns, defensive backend, smooth UX (modals, toasts, loading states), production-ready patterns (env config, verification flow).
-
-## Next Ideas
-
-Pagination • Role-based views • Optimistic updates • Task history
+Runs at: `http://localhost:5173`
 
 ---
 
-Built in ~3 days. Feel free to fork or reach out.
+## Test Credentials
 
 ```
+Admin:
+Email: admin@example.com
+Password: 123456
 
+User:
+Email: user@example.com
+Password: 123456
 ```
+
+---
+
+## API Documentation
+
+Postman Collection: [`postman_collection.json`](./postman/postman_collection.json)
+
+---
+
+## Scalability Notes
+
+- Modular structure allows easy addition of new modules
+- JWT + role-based access supports multi-service architecture
+- Database can be clustered for high load
+- Optional: caching, logging, Docker deployment
+
+---
+
+## Deployment Links
+
+- Frontend: [https://your-frontend.vercel.app](https://your-frontend.vercel.app)
+- Backend: [https://your-backend.onrender.com](https://your-backend.onrender.com)
+
+---
+
+## Demo / Screenshots
